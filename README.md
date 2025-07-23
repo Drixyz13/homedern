@@ -33,9 +33,7 @@ OrderItem (table de jointure)
 Product
 └── has_many :order_items
 
-yaml
-Copier
-Modifier
+
 
 ---
 
@@ -53,15 +51,11 @@ Modifier
 bundle install
 Configure la base de données :
 
-bash
-Copier
-Modifier
+
 rails db:create db:migrate db:seed
 Lance le serveur :
 
-bash
-Copier
-Modifier
+
 rails server
 Puis visite http://localhost:3000
 
