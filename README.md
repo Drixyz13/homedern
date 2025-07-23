@@ -43,20 +43,16 @@ Product
 ```bash
 git clone git@github.com:Drixyz13/homedern.git
 cd homedern/homedern_app
+
 Installe les gems :
-
-bash
-Copier
-Modifier
 bundle install
+
 Configure la base de données :
-
-
 rails db:create db:migrate db:seed
+
 Lance le serveur :
-
-
 rails server
+
 Puis visite http://localhost:3000
 
 📦 Gems principales
