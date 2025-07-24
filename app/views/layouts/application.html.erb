@@ -36,6 +36,14 @@
   <% if alert %>
     <div class="alert alert-warning"><%= alert %></div>
   <% end %>
-    <%= yield %>
+
+    <%= render "shared/navbar" %>
+
+<main>
+  <%= yield %>
+</main>
+
+<%= render "shared/footer" %>
+
   </body>
 </html>
