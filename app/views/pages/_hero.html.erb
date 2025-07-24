@@ -1,0 +1,20 @@
+<!-- HERO SECTION  -->
+<section class="bg-black text-white py-5 position-relative"
+  style="background: radial-gradient(circle at center, #1f1f1f 0%, #000000 100%);
+         min-height: 45vh;">
+  <div class="container text-center position-relative z-2" style="padding-top: 100px;">
+    <h1 class="display-4 fw-bold mb-3">Intelligent Automation for Your Home.</h1>
+    <p class="lead mb-4">Homedern brings AI to your fingertips to automate your lifestyle and environment.</p>
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <%= link_to "Get in touch →", "#contact", class: "btn bg-purple text-white px-4 border-0" %>
+      <%= link_to "View products", products_path, class: "btn btn-outline-light px-4" %>
+    </div>
+    <p class=" small">Compatible with Apple Pay, Google Pay, Android & iOS</p>
+    <p class=" small">Requires an Internet connection</p>
+  </div>
+
+  <!-- BACKGROUND EFFECT (fake blur planet) -->
+  <div class="position-absolute top-50 start-50 translate-middle opacity-10" style="z-index: 1;">
+    <div class="rounded-circle" style="width: 400px; height: 400px; background: radial-gradient(circle, #a855f7 0%, transparent 70%); filter: blur(80px);"></div>
+  </div>
+</section>

@@ -3,65 +3,35 @@ OrderItem.destroy_all
 Order.destroy_all
 Product.destroy_all
 User.destroy_all
+puts "✅ Database cleaned"
 
-puts "✅ Base cleaned"
-
-
+# 👤 Admin test user
 user = User.create!(
   email: "matt@homedern.com",
   password: "password",
   password_confirmation: "password"
 )
-puts "👤 User created"
+puts "👤 User created: #{user.email}"
 
-
-product1 = Product.create!(
-  name: "Lampe LED design",
-  description: "Une lampe moderne à lumière douce",
-  price_cents: 1499,
-  image_url: "https://via.placeholder.com/300x200"
-)
-
-product2 = Product.create!(
-  name: "Chaise Scandinave",
-  description: "Chaise confortable et élégante",
-  price_cents: 5499,
-  image_url: "https://via.placeholder.com/300x200"
-)
-
-product3 = Product.create!(
-  name: "Table basse bois clair",
-  description: "Parfaite pour les salons modernes",
-  price_cents: 7999,
-  image_url: "https://via.placeholder.com/300x200"
-)
-
-puts "🛒 Produits créés : #{Product.count}"
-
-
-order = Order.create!(
-  user: user,
-  status: "paid",
-  total_cents: product1.price_cents * 2 + product2.price_cents,
-  stripe_payment_id: "demo_123456"
-)
-
-puts "🧾 Order créée pour #{user.email}"
-
-
-OrderItem.create!(
-  order: order,
-  product: product1,
-  quantity: 2,
-  price_at_order: product1.price_cents
-)
-
-OrderItem.create!(
-  order: order,
-  product: product2,
-  quantity: 1,
-  price_at_order: product2.price_cents
-)
-
-puts "✅ Commande remplie avec #{order.order_items.count} articles"
-puts "🌱 SEED TERMINÉ ✅"
+# 🧠 AI Products
+Product.create!([
+  {
+    name: "Homedern Pod",
+    description: "Your voice assistant for a smarter home. Connects to Amazon, Apple Pay and your smartphone. Ask anything, control everything.",
+    price_cents: 12900,
+    image_url: "https://via.placeholder.com/600x400?text=Homedern+Pod"
+  },
+  {
+    name: "Homedern Climate",
+    description: "Premium upgrade for your Pod. Automatically adjusts your air conditioning based on real-time indoor temperature.",
+    price_cents: 18900,
+    image_url: "https://via.placeholder.com/600x400?text=Homedern+Climate"
+  },
+  {
+    name: "Homedern Fridge+",
+    description: "Your fridge companion with touchscreen. Tracks food levels, connects to MyFitnessPal and suggests healthy recipes from Marmiton.",
+    price_cents: 21900,
+    image_url: "https://via.placeholder.com/600x400?text=Homedern+Fridge+%2B"
+  }
+])
+puts "🛍️ 3 AI products created"
