@@ -1,44 +1,40 @@
-<!-- FOOTER -->
+
 <footer class="text-white pt-5 pb-3" id="footer" style="background: radial-gradient(circle at center, #0a0a0a 0%, #000000 100%); border-top: 1px solid #a855f7;">
   <div class="container">
     <div class="row">
       <!-- Brand -->
       <div class="col-md-6 mb-4 text-md-start text-center pe-md-5">
         <h5 class="text-purple fw-bold">Homedern</h5>
-        <p class="mb-1">Simplifying your lifestyle with AI-powered devices:</p>
+        <p class="mb-1">Simplifiez votre quotidien grâce à nos appareils intelligents :</p>
         <ul class="list-unstyled mb-1">
-          <li>- Voice assistants</li>
-          <li>- Smart climate control</li>
-          <li>- Connected nutrition tools</li>
+          <li>- Assistants vocaux</li>
+          <li>- Régulation intelligente de la température</li>
+          <li>- Outils de nutrition connectée</li>
         </ul>
-        <p class="mb-0">Made with ❤️ in Paris · Est. 2025</p>
+        <p class="mb-0">Conçu avec ❤️ à Paris · Depuis 2025</p>
       </div>
 
       <!-- Contact -->
       <div class="col-md-6 mb-4 text-md-end text-center ps-md-5">
-        <h6 class="text-purple fw-semibold">Contact Us</h6>
-        <p>Email: <a href="mailto:support@homedern.com" class="text-white text-decoration-none">support@homedern.com</a></p>
-        <p>Phone: <a href="tel:+33123456789" class="text-white text-decoration-none">+33 1 23 45 67 89</a></p>
-        <p class="mb-0">Customer support available 7 days a week.</p>
+        <h6 class="text-purple fw-semibold">Contactez-nous</h6>
+        <p>Email : <a href="mailto:support@homedern.com" class="text-white text-decoration-none">support@homedern.com</a></p>
+        <p>Téléphone : <a href="tel:+33123456789" class="text-white text-decoration-none">+33 1 23 45 67 89</a></p>
+        <p class="mb-0">Assistance disponible 7 jours sur 7</p>
       </div>
     </div>
 
-    <!-- Partners logos -->
+    <!-- Social  -->
     <div class="text-center mt-4">
-      <h6 class="text-purple mb-3">Powered by partners you trust</h6>
+      <h5 class="text-purple mb-3">Nos réseaux </h5>
       <div class="d-flex justify-content-center gap-4 flex-wrap align-items-center opacity-75">
-        <%= image_tag "partners/apple.svg", alt: "Apple", height: 30 %>
-        <%= image_tag "partners/amazon.svg", alt: "Amazon", height: 30 %>
-        <%= image_tag "partners/google.svg", alt: "Google", height: 30 %>
-        <%= image_tag "partners/android.svg", alt: "Android", height: 30 %>
-        <%= image_tag "partners/mistubishi.svg", alt: "Mitsubishi", height: 30 %>
-        <%= image_tag "partners/samsung.svg", alt: "Samsung", height: 30 %>
-        <%= image_tag "partners/myfitnesspal.svg", alt: "MyFitnessPal", height: 30 %>
+        <%= image_tag "social/x.svg", alt: "x", height: 30, class: "logo-invert" %>
+        <%= image_tag "social/instagram.svg", alt: "instagram", height: 50, class: "logo-invert" %>
+        <%= image_tag "social/facebook.svg", alt: "facebook", height: 50, class: "logo-invert" %>
       </div>
     </div>
 
     <!-- Copyright -->
     <hr class="mt-4 mb-2 border-purple">
-    <p class="text-center small mb-0">&copy; <%= Time.current.year %> Homedern. All rights reserved.</p>
+    <p class="text-center small mb-0">&copy; <%= Time.current.year %> Homedern. Tous droits réservés.</p>
   </div>
 </footer>
