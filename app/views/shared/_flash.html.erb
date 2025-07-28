@@ -1,16 +1,18 @@
-<div class="container  mt-5">
-       <% if notice %>
-          <div class="alert alert-info alert-dismissible text-center fade show text-dark position-absolute start-50 translate-middle-x z-3 w-75"
-              role="alert" style="top: 80px; z-index: 1055;">
-            <%= notice %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-          </div>
-        <% end %>
 
-        <% if alert %>
-          <div class="alert alert-warning alert-dismissible text-center fade show text-dark position-absolute start-50 translate-middle-x z-3 w-75"
-              role="alert" style="top: 80px; z-index: 1055;">
-            <%= alert %>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-          </div>
-        <% end %>
+<div class="position-relative">
+  <% if notice %>
+    <div class="alert alert-info alert-dismissible fade show text-dark text-center position-absolute start-50 translate-middle-x w-75"
+         role="alert" style="top: 80px; z-index: 1055;">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible fade show text-dark text-center position-absolute start-50 translate-middle-x w-75"
+         role="alert" style="top: 80px; z-index: 1055;">
+      <%= alert %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+  <% end %>
+</div>
