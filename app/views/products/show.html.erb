@@ -6,7 +6,7 @@
         <%= image_tag @product.image_url, class: "img-fluid rounded shadow", alt: @product.name %>
       </div>
 
-      <!-- Infos produit -->
+      <!-- Infos produ -->
       <div class="col-md-6">
         <h2 class="text-purple fw-bold"><%= @product.name %></h2>
         <p class="lead"><%= @product.description %></p>
@@ -36,8 +36,13 @@
 
         <p class="fw-bold fs-4"><%= number_to_currency(@product.price_cents / 100.0, unit: "€") %></p>
 
-        <%= button_to "Commander", new_order_path(product_id: @product.id),
-            class: "btn bg-purple text-white btn-hover-purple mt-3" %>
+        <% if user_signed_in? %>
+          <%= button_to "Commander", new_order_path(product_id: @product.id),
+              class: "btn bg-purple text-white btn-hover-purple mt-3" %>
+        <% else %>
+          <%= link_to "Connectez-vous pour commander", new_user_session_path,
+              class: "btn bg-purple text-white btn-hover-purple mt-3" %>
+        <% end %>
       </div>
     </div>
   </div>
