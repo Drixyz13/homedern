@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get "orders/index"
+  get "orders/show"
   get "users/show"
   root "pages#home"
 
   devise_for :users
 
+  post "/stripe_checkout/create", to: "stripe_checkout#create", as: :stripe_checkout
+  get "/stripe_checkout/success", to: "stripe_checkout#success", as: :success_stripe_checkout
+
+  resources :orders, only: [:index, :show]
   resources :users, only: [:show]
   resources :products, only: [:index, :show]
   resources :orders, only: [:new, :create, :show]
