@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  get "users/show"
   root "pages#home"
 
   devise_for :users
 
+  resources :users, only: [:show]
   resources :products, only: [:index, :show]
   resources :orders, only: [:new, :create, :show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

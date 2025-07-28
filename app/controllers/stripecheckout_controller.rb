@@ -1,0 +1,2 @@
+class StripecheckoutController < ApplicationController
+end
