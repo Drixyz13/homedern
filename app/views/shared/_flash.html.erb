@@ -1,0 +1,18 @@
+
+<div class="position-relative">
+  <% if notice %>
+    <div class="alert alert-info alert-dismissible fade show text-dark text-center position-absolute start-50 translate-middle-x w-75"
+         role="alert" style="top: 70px; z-index: 1055;">
+      <%= notice %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert alert-warning alert-dismissible fade show text-dark text-center position-absolute start-50 translate-middle-x w-75"
+         role="alert" style="top: 70px; z-index: 1055;">
+      <%= alert %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+    </div>
+  <% end %>
+</div>

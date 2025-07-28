@@ -37,7 +37,9 @@
         <p class="fw-bold fs-4"><%= number_to_currency(@product.price_cents / 100.0, unit: "€") %></p>
 
         <% if user_signed_in? %>
-          <%= button_to "Commander", new_order_path(product_id: @product.id),
+          <%= button_to "Commander", stripe_checkout_path(product_id: @product.id),
+            method: :post,
+            form: { data: { turbo: false} },
               class: "btn bg-purple text-white btn-hover-purple mt-3" %>
         <% else %>
           <%= link_to "Connectez-vous pour commander", new_user_session_path,

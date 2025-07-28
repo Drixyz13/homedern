@@ -1,0 +1,9 @@
+<div class=" p-3 rounded mb-4">
+  <p class="mb-1"><strong>Commande n°<%= order.id %></strong> – <%= l(order.created_at, format: :short) %></p>
+  <ul class="mb-2">
+    <% order.order_items.each do |item| %>
+      <li><%= item.product.name %> – <%= item.quantity %> × <%= number_to_currency(item.price_at_order / 100.0, unit: "€") %></li>
+    <% end %>
+  </ul>
+  <p class="fw-bold">Total : <%= number_to_currency(order.total_cents / 100.0, unit: "€") %></p>
+</div>

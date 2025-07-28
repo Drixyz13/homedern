@@ -1,0 +1,45 @@
+<section class="py-5 mt-5 text-white" style="background-color: #111; min-height: 100vh;">
+  <div class="container">
+
+    <div class="d-flex justify-content-start mb-4">
+      <%= link_to "← Retour à mon compte", user_path(current_user), class: "btn btn-outline-light" %>
+    </div>
+
+    <h2 class="text-center text-purple fw-bold mb-5">Toutes mes commandes</h2>
+
+    <% if @orders.any? %>
+      <% @orders.each do |order| %>
+        <div class="card bg-dark text-white border-0 shadow p-4 mb-4">
+          <p class="mb-3">
+            <strong class="text-purple">Commande n°<%= order.id %></strong>
+            — <%= l(order.created_at, format: :short) %>
+          </p>
+
+          <% order.order_items.each do |item| %>
+            <div class="d-flex align-items-center mb-2">
+              <% if item.product.image_url.present? %>
+                <%= image_tag item.product.image_url, class: "rounded me-3", style: "width: 60px; height: 60px; object-fit: cover;" %>
+              <% else %>
+                <div class="bg-secondary rounded me-3" style="width: 60px; height: 60px;"></div>
+              <% end %>
+
+              <div>
+                <p class="mb-0 fw-bold text-white"><%= item.product.name %></p>
+                <p class="mb-0 text-white-50">
+                  <%= item.quantity %> × <%= number_to_currency(item.price_at_order / 100.0, unit: "€") %>
+                </p>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <p class="fw-bold mb-0 text-white">Total : <%= number_to_currency(order.total_cents / 100.0, unit: "€") %></p>
+            <p class="mb-0 text-purple">Livraison estimée : <%= l(order.created_at + 5.days, format: :short) %></p>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="text-white text-center">Aucune commande pour le moment.</p>
+    <% end %>
+  </div>
+</section>

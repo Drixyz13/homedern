@@ -14,6 +14,20 @@ Elle permet aux utilisateurs de parcourir un catalogue de produits et de passer 
 - Seed automatique des données pour la démo (`rails db:seed`)
 - Interface responsive avec Bootstrap (ou autre framework CSS au choix)
 
+Créez un fichier .env à la racine de l’app :
+
+Ajoutez vos clés API Stripe dans ce fichier .env :
+
+STRIPE_SECRET_KEY=sk_test_votre_clé_secrète
+STRIPE_PUBLISHABLE_KEY=pk_test_votre_clé_publique
+💡 Vous pouvez obtenir ces clés sur votre tableau de bord Stripe : https://dashboard.stripe.com
+
+Assurez-vous que le fichier .env est bien ignoré par Git (.gitignore contient déjà la ligne .env).
+
+L’initializer Stripe est dans :
+config/initializers/stripe.rb :
+
+Stripe.api_key = ENV['STRIPE_SECRET_KEY']
 ---
 
 ## 🧱 Modèle de données (MVP)

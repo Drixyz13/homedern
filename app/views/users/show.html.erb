@@ -2,27 +2,44 @@
   <div class="container">
     <h2 class="text-center text-purple fw-bold mb-5">Mon compte</h2>
 
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card bg-dark text-white border-0 shadow p-4 mb-4">
-          <h5 class="text-purple fw-bold mb-3">Informations personnelles</h5>
+    
+    <div class="card bg-dark text-white border-0 shadow p-4 mb-4">
+      <h5 class="text-purple fw-bold mb-3">Mes commandes récentes</h5>
 
-          <p><strong>Prénom :</strong> <%= @user.first_name %></p>
-          <p><strong>Nom :</strong> <%= @user.last_name %></p>
-          <p><strong>Email :</strong> <%= @user.email %></p>
-          <p><strong>Ville :</strong> <%= @user.city %></p>
-          <p><strong>Code postal :</strong> <%= @user.zip_code %></p>
+      <% if current_user.orders.any? %>
+        <% current_user.orders.order(created_at: :desc).limit(3).each do |order| %>
+          <%= render partial: "orders/order", locals: { order: order } %>
+        <% end %>
+
+        <div class="mt-3">
+          <%= link_to "Voir toutes mes commandes", orders_path,
+              class: "btn btn-outline-light w-100" %>
         </div>
+      <% else %>
+        <p class="text-muted">Aucune commande pour le moment.</p>
+      <% end %>
+    </div>
 
-        <div class="d-grid gap-2">
-          <%= link_to "Modifier mon profil", edit_user_registration_path, class: "btn btn-outline-light" %>
+    
+    <div class="card bg-dark text-white border-0 shadow p-4 mb-4">
+      <h5 class="text-purple fw-bold mb-3">Informations personnelles</h5>
+      <p><strong>Prénom :</strong> <%= @user.first_name %></p>
+      <p><strong>Nom :</strong> <%= @user.last_name %></p>
+      <p><strong>Email :</strong> <%= @user.email %></p>
+      <p><strong>Ville :</strong> <%= @user.city %></p>
+      <p><strong>Code postal :</strong> <%= @user.zip_code %></p>
 
-          <%= button_to "Se déconnecter", destroy_user_session_path,
-                method: :delete,
-                class: "btn bg-purple text-white px-4 border-0 btn-hover-purple mt-3",
-                data: { confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" } %>
-        </div>
+      <div class="d-grid gap-2 mt-4">
+        <%= link_to "Modifier mon profil", edit_user_registration_path, class: "btn btn-outline-light" %>
       </div>
+    </div>
+
+    
+    <div class="d-grid gap-2">
+      <%= button_to "Se déconnecter", destroy_user_session_path,
+            method: :delete,
+            class: "btn bg-purple text-white px-4 border-0 btn-hover-purple",
+            data: { confirm: "Êtes-vous sûr de vouloir vous déconnecter ?" } %>
     </div>
   </div>
 </section>
