@@ -33,26 +33,13 @@
 
     <%= render "shared/navbar" %>
 
-  <main>
-    
-    <div class="container pt-3 mt-5">
-      <% if notice %>
-        <div class="alert alert-info alert-dismissible fade show text-dark" role="alert">
-          <%= notice %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-        </div>
-      <% end %>
+     
 
-      <% if alert %>
-        <div class="alert alert-warning alert-dismissible fade show text-dark" role="alert">
-          <%= alert %>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
-        </div>
-      <% end %>
-    </div>
+    <main>
+        <%= render "shared/flash" %>
+       <%= yield %>
+    </main>
 
-    <%= yield %>
-  </main>
 
 <%= render "shared/footer" %>
 
