@@ -1,0 +1,30 @@
+<h1 style="color: #6366f1;">Merci pour votre commande, <%= @user.first_name %> !</h1>
+
+<p>Nous avons bien reçu votre commande sur <strong>Homedern</strong>.</p>
+
+<p>Voici le récapitulatif de votre achat :</p>
+
+<ul>
+  <% @order.order_items.each do |item| %>
+    <li>
+      <strong><%= item.product.name %></strong> — 
+      <%= number_to_currency(item.product.price_cents / 100.0, unit: "€") %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Commande passée le <%= l(@order.created_at, format: :long) %>.</p>
+
+<hr>
+
+<p>⏱️ <strong>Livraison estimée :</strong> 5 à 7 jours ouvrés.</p>
+<p>📦 Un e-mail vous sera envoyé sous 24h pour <strong>choisir la date de livraison</strong> avec notre service logistique.</p>
+
+<hr>
+
+<h3 style="color: #6366f1;">Contactez-nous</h3>
+<p>Email : <a href="mailto:support@homedern.com">support@homedern.com</a><br>
+Téléphone : +33 1 23 45 67 89<br>
+<em>Assistance disponible 7 jours sur 7</em></p>
+
+<p style="margin-top: 30px;">À très bientôt sur <strong>Homedern</strong> 🏠🤖</p>

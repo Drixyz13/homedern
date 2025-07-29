@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post "/stripe_checkout/create", to: "stripe_checkout#create", as: :stripe_checkout
   get "/stripe_checkout/success", to: "stripe_checkout#success", as: :success_stripe_checkout
 
+  get '/faq', to: 'pages#faq'
+
   resources :orders, only: [:index, :show]
   resources :users, only: [:show]
   resources :products, only: [:index, :show]
