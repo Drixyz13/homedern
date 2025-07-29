@@ -1,0 +1,24 @@
+Merci pour votre commande, <%= @user.first_name %> !
+
+Nous avons bien reçu votre commande sur Homedern.
+
+Récapitulatif de votre commande :
+
+<% @order.order_items.each do |item| %>
+- <%= item.product.name %> — <%= number_to_currency(item.product.price_cents / 100.0, unit: "€") %>
+<% end %>
+
+Date de commande : <%= l(@order.created_at, format: :long) %>
+
+-------------------------------
+Livraison estimée : 5 à 7 jours ouvrés.
+
+Un e-mail vous sera envoyé sous 24h pour choisir la date de livraison avec notre service logistique.
+-------------------------------
+
+Contactez-nous :
+Email : support@homedern.com
+Téléphone : +33 1 23 45 67 89
+Assistance disponible 7 jours sur 7
+
+À très bientôt sur Homedern 🏠🤖
