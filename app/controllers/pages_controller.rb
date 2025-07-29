@@ -4,4 +4,7 @@ class PagesController < ApplicationController
      @temps  = Product.find_by(name: "Homedern Temps")
      @fridge = Product.find_by(name: "Homedern Fridge")
   end
+
+  def faq
+  end
 end
