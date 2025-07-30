@@ -44,7 +44,7 @@ class StripeCheckoutController < ApplicationController
 
     OrderMailer.confirmation_email(order).deliver_now
 
-    redirect_to product_path(@product), notice: "Merci pour votre achat !"
+    redirect_to order_path(order), notice: "Merci pour votre achat !"
   rescue Stripe::InvalidRequestError
     redirect_to root_path, alert: "Erreur de confirmation du paiement."
   end
