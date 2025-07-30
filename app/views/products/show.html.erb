@@ -1,12 +1,12 @@
 <section class="py-5 mt-5 text-white" style="background: radial-gradient(circle at center, #111 0%, #000 100%);">
   <div class="container">
     <div class="row align-items-center">
-      <!-- Image produit -->
+     
       <div class="col-md-6">
         <%= image_tag @product.image_url, class: "img-fluid rounded shadow", alt: @product.name %>
       </div>
 
-      <!-- Infos produ -->
+      
       <div class="col-md-6">
         <h2 class="text-purple fw-bold"><%= @product.name %></h2>
         <p class="lead"><%= @product.description %></p>
@@ -50,48 +50,6 @@
   </div>
 </section>
 
-<section class="py-5 text-white" style="background-color: #0f0f0f;">
-  <div class="container">
-    <h3 class="text-center fw-bold text-purple mb-5">Pourquoi choisir Homedern?</h3>
+<%= render "products/instructions" %>
+<%= render "products/service" %>
 
-    <div class="row text-center">
-      <div class="col-md-3 mb-4">
-        <i class="fas fa-bolt fa-2x mb-3 text-purple"></i>
-        <h5 class="fw-semibold">Installation instantanée</h5>
-        <p>Branchez, connectez, profitez. Aucun technicien requis pour nos produits standards.</p>
-      </div>
-
-      <div class="col-md-3 mb-4">
-        <i class="fas fa-brain fa-2x mb-3 text-purple"></i>
-        <h5 class="fw-semibold">IA intégrée & intelligente</h5>
-        <p>Vos habitudes sont apprises automatiquement pour vous offrir un confort quotidien sur-mesure.</p>
-      </div>
-
-      <div class="col-md-3 mb-4">
-        <i class="fas fa-heart fa-2x mb-3 text-purple"></i>
-        <h5 class="fw-semibold">Pensé pour votre quotidien</h5>
-        <p>Des objets solides, esthétiques et durables qui s’intègrent naturellement à votre vie.</p>
-      </div>
-
-      <div class="col-md-3 mb-4">
-        <i class="fas fa-shield-alt fa-2x mb-3 text-purple"></i>
-        <h5 class="fw-semibold">Garantie 2 ans</h5>
-        <p>Tous nos produits sont garantis 24 mois avec un service client réactif basé en France.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="py-5 text-white" style="background-color: #111;">
-  <div class="container">
-    <div class="row">
-      <div class="col text-center text-md-start">
-        <h4 class="text-purple fw-bold mb-3">Un accompagnement humain pour les produits techniques</h4>
-        <p class="text-purple fw-semibold mb-2">Mise en service assistée</p>
-        <p class="mb-2">Pour le climatiseur connecté <strong>Homedern Temps</strong> et le réfrigérateur <strong>Homedern Fridge</strong>, nous vous proposons l’assistance d’un technicien agréé à domicile.</p>
-        <p class="mb-2">Vous bénéficiez ainsi d’une installation rapide, sécurisée et parfaitement adaptée à votre logement.</p>
-        <p class="fw-bold mb-0">Avec Homedern, la technologie se met vraiment au service de votre confort.</p>
-      </div>
-    </div>
-  </div>
-</section>
