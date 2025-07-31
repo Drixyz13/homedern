@@ -64,7 +64,7 @@ end
 
 gem "devise", "~> 4.9"
 
-gem "stripe", "~> 15.3"
+gem "stripe", "~> 15.4"
 
 gem "letter_opener", "~> 1.10", group: :development
 
