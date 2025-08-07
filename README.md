@@ -33,9 +33,7 @@ OrderItem (join table)
 Product
 └── has_many :order_items
 
-yaml
-Copier
-Modifier
+
 
 ---
 
